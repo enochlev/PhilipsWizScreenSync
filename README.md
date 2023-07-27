@@ -5,9 +5,9 @@ The program is structured as a simple GUI that allows you to choose which parts 
 
 ![App screenshot](screenshot.png)
 
-- The red square surrounds the `Test` button. This button will cause the lights to flicker. This is useful for identifying which light corresponds to which IP address when you're setting things up. 
+- The blue square surrounds the `Test` button. This button will cause the lights to flicker. This is useful for identifying which light corresponds to which IP address when you're setting things up. 
 
-- The blue square surrounds the radio buttons. These allow you to choose which part of the screen each light should sync with. You can choose from the following options: "Full", "Left Half", "Right Half", "Top Half", "Bottom Half". 
+- The red square allows you to choose which part of the screen each light should sync with. You can choose from the following options: "Full", "Left Half", "Right Half", "Top Half", "Bottom Half". 
 
 - The `Run` button at the bottom of the app starts the screen syncing process. Once this is clicked, each selected light will start mirroring the colors of its assigned screen area. However, please note that this feature is currently a little buggy. Once the screen syncing process has been started, you won't be able to minimize the app window. We're working on fixing this in future updates!
 
