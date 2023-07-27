@@ -1,0 +1,4 @@
+asyncio
+pywizlight
+pyautogui
+numpy
