@@ -19,7 +19,7 @@ If you're interested in developing this project further, you can clone the repos
 
 ```bash
 git clone https://github.com/enochlev/PhilipsWizScreenSync.git
-
+```
 
 This application allows you to search your network for Philips Wiz lights and make their screens sync. It's a great tool for creating an immersive lighting environment based on what's currently displayed on your screen. 
 
