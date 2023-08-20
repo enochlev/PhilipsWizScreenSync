@@ -1,4 +1,8 @@
 # Philips Wiz Screen Sync
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/qvOY2ONg3P0/1.jpg)](https://www.youtube.com/watch?v=qvOY2ONg3P0)
+
+
 This project allows your program to search your network for Philips Wiz lights and sync them with your screen.
 
 The program is structured as a simple GUI that allows you to choose which parts of your screen to sync with which lights. A few key features are highlighted below:
