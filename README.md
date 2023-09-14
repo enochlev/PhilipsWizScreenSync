@@ -59,7 +59,8 @@ For developers who want to compile the application from the source code, you nee
 4. Run the PyInstaller to compile the script into an executable file:
 
    ```bash
-   pyinstaller --onefile --noconsole -n "ScreenSync" -i icon.ico pythonLights.py
+   pyinstaller --onefile --noconsole -n "Screen Sync" -i icon.ico --add-data "icon.ico;." --add-data "icon.gif;." pythonLights.py
+
    ```
 5. You'll find the compiled executable in the `dist` directory. 
 
