@@ -15,9 +15,10 @@ class WizLightManager:
         self.bulbs_ips = []
         
     def discover_bulbs(self, manual_ip):
+        manual_ip = None
         bulbs = self.loop.run_until_complete(discovery.discover_lights())
         self.bulbs = bulbs
-        manual_light = wizlight(manual_ip.get())
+        manual_light = wizlight(manual_ip)
         self.bulbs.append(manual_light)
         self.bulbs_ips = [i.ip for i in bulbs]
         return bulbs
@@ -114,7 +115,7 @@ class App:
         y = (hs/2) - (h/2)
         self.root.geometry('%dx%d+%d+%d' % (w, h, x, y))
 
-    def start_screen(self, manual_ip):
+    def start_screen(self, manual_ip = None):
         """Press Button to search for IP address"""
         self.manager.discover_bulbs(manual_ip)
 
