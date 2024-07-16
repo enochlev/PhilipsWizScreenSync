@@ -14,9 +14,12 @@ class WizLightManager:
         self.bulbs = []
         self.bulbs_ips = []
         
-    def discover_bulbs(self):
+    def discover_bulbs(self, manual_ip):
+        manual_ip = None
         bulbs = self.loop.run_until_complete(discovery.discover_lights())
         self.bulbs = bulbs
+        manual_light = wizlight(manual_ip)
+        self.bulbs.append(manual_light)
         self.bulbs_ips = [i.ip for i in bulbs]
         return bulbs
 
@@ -85,6 +88,16 @@ class App:
         self.search_button = tk.Button(self.root, text="Search for Wiz Lights", command=self.start_screen, width=25)
         self.search_button.grid(row=1, column=0, padx=10, pady=10)
 
+        # Manually Add
+        manual_ip = tk.StringVar()
+        self.manual_input = tk.Entry(self.root,textvariable=manual_ip, width = 15)
+        self.manual_label = tk.Label(self.root, text='Manually Add:', font=('calibre',10, 'bold'), anchor='w')
+        # Pass input IP to lights
+        self.manual_submit = tk.Button(self.root, text="Submit", command=lambda:self.start_screen(manual_ip), width=10) #
+        self.manual_label.grid(row=2, column=0, sticky="w", padx=10)
+        self.manual_input.grid(row=2, column=0, sticky="e")
+        self.manual_submit.grid(row=2, column=1, padx=10)
+
         # Center the window on the screen
         self.center_window()
     def adjust_window_size(self):
@@ -102,9 +115,9 @@ class App:
         y = (hs/2) - (h/2)
         self.root.geometry('%dx%d+%d+%d' % (w, h, x, y))
 
-    def start_screen(self):
+    def start_screen(self, manual_ip = None):
         """Press Button to search for IP address"""
-        self.manager.discover_bulbs()
+        self.manager.discover_bulbs(manual_ip)
 
         for widget in self.root.winfo_children():
             widget.destroy()
